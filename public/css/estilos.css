@@ -1,0 +1,22 @@
+.cuerpo{
+    margin: 63px auto 0px auto;
+
+}
+.espacio{
+    margin-top: -10px;
+
+}
+.centrar{
+    /* float: left; */
+    margin-top: 100px;
+}
+
+.con{
+    /* margin-top: -200px; */
+    width: 100%;
+    height: 630px;
+    /* padding: 420px; */
+}
+.pie{
+    margin-top: 450px;
+}
