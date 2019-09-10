@@ -7,8 +7,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h1 class="title">Your Story Starts With Us.</h1>
-          <h4>Every landing page needs a small description after the big bold title, that&apos;s why we added this text here. Add here all the information that can make you or your product create the first impression.</h4>
+          <h1 class="title">Elige tu destino</h1>
+          <h4>En Arrecife Tours Especialistas en soluciones vacacionales a los mejores precios del mercado; contamos con un equipo de profesionales a su servicio que se encargarán de diseñar sus vacaciones de la forma más personalizada. Reserva con Arrecife Tours y VIVE LA EXPERIENCIA DE VIAJAR.</h4>
           <br>
           <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn btn-danger btn-raised btn-lg">
             <i class="fa fa-play"></i> Watch video
@@ -59,74 +59,33 @@
         </div>
       </div>
       <div class="section text-center">
-        <h2 class="title">Here is our team</h2>
+        <h2 class="title">Tours disponibles</h2>
         <div class="team">
           <div class="row">
+            @foreach($tours as $tour)
             <div class="col-md-4">
               <div class="team-player">
                 <div class="card card-plain">
-                  <div class="col-md-6 ml-auto mr-auto">
-                    <img src="../assets/img/faces/avatar.jpg" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
+                  <div class="col-md-6 ml-auto mr-auto" style="max-width:78%">
+                    <img src='{{$tour->category->image}}' alt="Thumbnail Image" class="img-raised rounded-circle" style='height:250px; width:250px;'>
+                    <!-- style='height:150px; width:250px' -->
                   </div>
-                  <h4 class="card-title">Gigi Hadid
+                  <h4 class="card-title">{{$tour->name}}
                     <br>
-                    <small class="card-description text-muted">Model</small>
+                    <small class="card-description text-muted">{{$tour->category->name}}</small>
                   </h4>
                   <div class="card-body">
-                    <p class="card-description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
-                      <a href="#">links</a> for people to be able to follow them outside the site.</p>
+                    <p class="card-description">{{$tour->description}}</p>
                   </div>
                   <div class="card-footer justify-content-center">
-                    <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-twitter"></i></a>
-                    <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-instagram"></i></a>
-                    <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-facebook-square"></i></a>
+                    <a href="#" class="btn btn-link btn-just-icon"><i class="fa fa-twitter"></i></a>
+                    <a href="#" class="btn btn-link btn-just-icon"><i class="fa fa-instagram"></i></a>
+                    <a href="#" class="btn btn-link btn-just-icon"><i class="fa fa-facebook-square"></i></a>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="team-player">
-                <div class="card card-plain">
-                  <div class="col-md-6 ml-auto mr-auto">
-                    <img src="../assets/img/faces/christian.jpg" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
-                  </div>
-                  <h4 class="card-title">Christian Louboutin
-                    <br>
-                    <small class="card-description text-muted">Designer</small>
-                  </h4>
-                  <div class="card-body">
-                    <p class="card-description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
-                      <a href="#">links</a> for people to be able to follow them outside the site.</p>
-                  </div>
-                  <div class="card-footer justify-content-center">
-                    <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-twitter"></i></a>
-                    <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-linkedin"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="team-player">
-                <div class="card card-plain">
-                  <div class="col-md-6 ml-auto mr-auto">
-                    <img src="../assets/img/faces/kendall.jpg" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
-                  </div>
-                  <h4 class="card-title">Kendall Jenner
-                    <br>
-                    <small class="card-description text-muted">Model</small>
-                  </h4>
-                  <div class="card-body">
-                    <p class="card-description">You can write here details about one of your team members. You can give more details about what they do. Feel free to add some
-                      <a href="#">links</a> for people to be able to follow them outside the site.</p>
-                  </div>
-                  <div class="card-footer justify-content-center">
-                    <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-twitter"></i></a>
-                    <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-instagram"></i></a>
-                    <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-facebook-square"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
+            @endforeach
           </div>
         </div>
       </div>

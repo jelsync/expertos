@@ -21,7 +21,7 @@
 </head>
 
 <body class="">
-    <nav class="espacio navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg"
+    <nav class="espacio navbar navbar-dark bg-dark  fixed-top navbar-expand-lg"
         color-on-scroll="100" id="sectionsNav">
         <div class="container">
             <div class="navbar-translate">
