@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- Este es el nav -->
 <head>
     <meta charset="utf-8" />
     <link rel="apple-touch-icon" sizes="76x76" href="../asset/img/apple-icon.png">
@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css"
         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-    <link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet" />
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/material-kit.css')}}" rel="stylesheet" />
     <link href="{{ asset('css/demo.css')}}" rel="stylesheet" />
     <link href="{{ asset('css/estilos.css')}}" rel="stylesheet" />
@@ -25,8 +25,8 @@
         color-on-scroll="100" id="sectionsNav">
         <div class="container">
             <div class="navbar-translate">
-                <a class="navbar-brand" href="{{ url('/')}}">
-                    *Turistiando* </a>
+                <a class="navbar-brand" href="{{ url('/')}}"> <!-- RUTA RAIZ -->
+                    *Buscar titulo* </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="sr-only">Toggle navigation</span>
@@ -90,11 +90,12 @@
     </nav>
     <div class="wrapper">
         @yield('content')
-
+<!-- yield Mando a llamar plantillas de otra pagina -->
     </div>
     <script src="{{asset('js/core/jquery.min.js')}}" type="text/javascript"></script>
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.csss')}}">
     <script src="{{asset('js/core/popper.min.js')}}" type="text/javascript"></script>
-    <script src="{{asset('js/core/bootstrap-material-design')}}.min.js" type="text/javascript"></script>
+    <script src="{{asset('js/core/bootstrap-material-design.min.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/plugins/moment.min.js')}}"></script>
     <script src="{{asset('js/plugins/bootstrap-datetimepicker.js')}}" type="text/javascript"></script>
     <script src="{{asset('js/plugins/nouislider.min.js')}}" type="text/javascript"></script>

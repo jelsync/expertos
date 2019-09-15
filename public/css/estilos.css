@@ -23,3 +23,12 @@
 .barra{
     margin-top: 80px;
 }
+
+.index{
+    margin-bottom: 130px;
+}
+
+.centrar{
+    display:table;
+     margin:0 auto; 
+}

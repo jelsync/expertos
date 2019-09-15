@@ -15,7 +15,8 @@ class CreateGuidesTable extends Migration
     {
         Schema::create('guides', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id');
+            $table->string('name');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });

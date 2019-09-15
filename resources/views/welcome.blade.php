@@ -1,5 +1,6 @@
 @extends('layouts.app')
-
+<!-- extends mando a llamar codigo de la capeta layouts del archivo app -->
+<!-- secction, parte de codigo que quiero "encapsular" y mandarlo a imprimir a otro lado-->
 @section('content')
 <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
   </nav>
@@ -62,7 +63,7 @@
         <h2 class="title">Tours disponibles</h2>
         <div class="team">
           <div class="row">
-            @foreach($tours as $tour)
+            @foreach($tours as $tour) <!-- RECORRER EL ARREGLO  -->
             <div class="col-md-4">
               <div class="team-player">
                 <div class="card card-plain">
