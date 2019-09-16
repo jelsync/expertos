@@ -16,7 +16,7 @@
             <div class="team">
                 <div class="row">
                     <table class="table">
-                    <a href="{{ url('/admin/tours/create') }}" class="btn btn-primary">Agregar Nuevo Tour</a>
+                        <a href="{{ url('/admin/tours/create') }}" class="btn btn-primary">Agregar Nuevo Tour</a>
                         <thead>
                             <tr>
                                 <th class="text-center">#</th>
@@ -37,21 +37,21 @@
                                 <td class="col-2">{{ $tour->description }}</td>
                                 <td>&#76;{{ $tour->price }}</td>
                                 <td>{{ $tour->reservations }}</td>
-                                <td>{{ $tour->guide->name }}</td>
-                                <td class="">{{ $tour->category->name }}</td>
+                                <td>{{ $tour->guide ? $tour->guide->name : 'No'}}</td>
+                                <td class="">{{ $tour->category ? $tour->category->name : 'No'}}</td>
                                 <td class="td-actions text-right">
                                     <button type="button" rel="tooltip" title="Ver Tour"
                                         class="btn btn-info btn-simple btn-xs">
                                         <i class="fa fa-info"></i>
                                     </button>
-                                    <button type="button" rel="tooltip" title="Editar Tour"
-                                        class="btn btn-success btn-simple btn-xs">
+                                    <a href="{{ url('/admin/tours/'.$tour->id.'/edit') }}" rel="tooltip"
+                                        title="Editar Tour" class="btn btn-success btn-simple btn-xs">
                                         <i class="fa fa-edit"></i>
-                                    </button>
-                                    <button type="button" rel="tooltip" title="Elimiar Tour"
+                                    </a>
+                                    <a href="{{'/admin/tours/'.$tour->id.'/delete'}}" rel="tooltip" title="Elimiar Tour"
                                         class="btn btn-danger btn-simple btn-xs">
                                         <i class="fa fa-times"></i>
-                                    </button>
+                                    </a>
                                 </td>
                             </tr>
                             @endforeach

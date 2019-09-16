@@ -23,8 +23,52 @@ class TourController extends Controller
         return view('admin.tours.create')->with(compact('guides', 'categories')); //devuelve formulario registro
     }
     
-    public function store()
+    public function store(Request $request)
     {
         //guarda el formulario
+        // dd($request->all());
+        $tour = new Tour();
+        
+        $tour -> name = $request->input('name');   
+        $tour -> description = $request->input('description');   
+        $tour -> price = $request->input('price');   
+        $tour -> reservations = $request->input('reservations'); 
+        $tour -> guide_id = $request->input('nombreGuia');
+        $tour -> category_id = $request->input('nombreCategoria');  
+
+        $tour -> save();
+        
+        return redirect('/admin/tours');
+    }
+
+    public function edit($id)
+    {
+        // return "Imprime el $id";
+        $categories = Category::all();
+        $tours = Tour::find($id);
+        $guides = Guide::all();
+        return view('admin.tours.edit')->with(compact('tours', 'guides', 'categories')); //devuelve listado 
+    }
+
+    public function update(Request $request, $id)
+    {
+        $tour = Tour::find($id);
+        $tour -> name = $request->input('name');   
+        $tour -> description = $request->input('description');   
+        $tour -> price = $request->input('price');   
+        $tour -> reservations = $request->input('reservations'); 
+        $tour -> guide_id = $request->input('nombreGuia');  
+        $tour -> save();
+        
+        return redirect('/admin/tours');
+    }
+
+    public function destroy( $id)
+    {
+        // $guide = new Guide();
+        $tour = Tour::find($id);
+        $tour -> delete();
+        
+        return back();
     }
 }

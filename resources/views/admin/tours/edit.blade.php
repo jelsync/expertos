@@ -12,31 +12,32 @@
 <div class="main main-raised">
     <div class="container">
         <div class="section text-center">
-            <h2 class="title">Registrar Tours</h2>
-            <form method="POST"action="{{ url('/admin/tours') }}" >
+            <h2 class="title">Editar Tours</h2>
+            <form method="POST" action="{{ url('/admin/tours/'.$tours->id.'/edit') }}" >
                 {{ csrf_field() }}
                 <div class="form-row">
                     <div class="col-md-4 mb-3">
-                        <input type="text" name="name" placeholder="Nombre del Tour..." class="form-control" />
+                        <input type="text" name="name" placeholder="Nombre del Tour..." class="form-control" value="{{ $tours->name }}" />
                     </div>
                     <div class="col-md-8 mb-3">
-                        <input type="text" name="description" placeholder="Descripción..." class="form-control" />
+                        <input type="text" name="description" placeholder="Descripción..." class="form-control" value="{{ $tours->description }}"/>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col-md-4 mb-3">
-                        <input type="text" name="price" placeholder="Precio..." class="form-control" />
+                        <input type="text" name="price" placeholder="Precio..." class="form-control" value="{{ $tours->price }}" />
                     </div>
                     <div class="col-md-4 mb-3">
-                        <input type="text" name="reservations" placeholder="Numero de reservaciones.." class="form-control" />
+                        <input type="text" name="reservations" placeholder="Numero de reservaciones.." class="form-control" value="{{ $tours->reservations }}"/>
                     </div>
                 </div>
                <div class="form-row">
+
                     <div class="col-md-4 mb-3">
                         <label>Guias Disponibles</label>
                         <select class="form-control" name="nombreGuia">
                             @foreach($guides as $guide)
-                            <option value="{{$guide->id}}">{{ $guide->name }}</option>
+                            <option value="{{$guide->id}}">{{ $guide-> name}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -44,13 +45,14 @@
                         <label>Tipo de categoria</label>
                         <select class="form-control" name="nombreCategoria">
                             @foreach($categories as $category)
-                            <option value="{{$category->id}}">{{ $category->name }}</option>
+                            <option value="{{$category->id}}">{{ $category-> name}}</option>
                             @endforeach
                         </select>
                         </div>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary">Registrar Tour</button>
+                    <button class="btn btn-primary">Registrar Tour</button>
+                    <a href="{{ url('/admin/tours') }}" class="btn btn-danger">Cancelar</a>
             </form>
 
 

@@ -14,7 +14,7 @@ class CreateToursTable extends Migration
     public function up()
     {
         Schema::create('tours', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id')->nullable();
             $table->string('name');
             $table->string('description');
             $table->float('price');
@@ -26,7 +26,7 @@ class CreateToursTable extends Migration
             $table->timestamps();
         });
     }
-
+    
     /**
      * Reverse the migrations.
      *

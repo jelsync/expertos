@@ -6,6 +6,14 @@ INSERT INTO `categories` (`id`, `name`, `description`, `image`, `created_at`, `u
 (2, 'Local', 'Quisquam culpa quas saepe ut voluptas possimus non aspernatur voluptas.', 'img/imgTour/2.webp', '2019-09-09 23:55:50', '2019-09-09 23:55:50'),
 (3, 'Extrajeros', 'Ipsa sed reiciendis cum sequi accusantium ut cum repellendus et recusandae iste.', 'img/imgTour/3.webp', '2019-09-09 23:55:50', '2019-09-09 23:55:50');
 
+-- Volcado de datos para la tabla `guides`
+--
+
+INSERT INTO `guides` (`id`, `name`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 'Jelsyn Ceron', NULL, NULL, NULL),
+(2, 'Maestro Rochi', NULL, NULL, NULL),
+(3, 'Señor Piccolo Daimaku', NULL, NULL, NULL);
+
 
 -- Volcado de datos para la tabla `tours`
 --
