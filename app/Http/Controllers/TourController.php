@@ -19,7 +19,7 @@ class TourController extends Controller
     public function create()
     {
         $guides = Guide::all();
-        $categories = Category::all();
+        $categories = Category::all();  
         return view('admin.tours.create')->with(compact('guides', 'categories')); //devuelve formulario registro
     }
     

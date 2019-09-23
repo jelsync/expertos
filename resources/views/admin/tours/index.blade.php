@@ -3,8 +3,8 @@
 <!-- secction, parte de codigo que quiero "encapsular" y mandarlo a imprimir a otro lado-->
 @section('content')
 
-<nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100"
-    id="sectionsNav">
+<nav class="navbar navbar-dark navbar-color-on-scroll navbar-expand-lg" 
+    >
 </nav>
 <div class="index" data-parallax="true" style="background-image: url('img/profile_city.jpg')">
 
@@ -20,8 +20,8 @@
                         <thead>
                             <tr>
                                 <th class="text-center">#</th>
-                                <th>Nombre</th>
-                                <th>Descripción</th>
+                                <th class= "col-md-1">Nombre</th>
+                                <th class= "col-md-3">Descripción</th>
                                 <th>Precio</th>
                                 <th class=""># Reservaciones</th>
                                 <th class="">Guia Asignado</th>
@@ -32,25 +32,29 @@
                         <tbody>
                             @foreach($tours as $tour)
                             <tr>
-                                <td class="text-center"></td>
+                                <td class="text-center">{{ $tour->id }}</td>
                                 <td>{{ $tour->name }}</td>
-                                <td class="col-2">{{ $tour->description }}</td>
+                                <td class="col-3">{{ $tour->description }}</td>
                                 <td>&#76;{{ $tour->price }}</td>
                                 <td>{{ $tour->reservations }}</td>
                                 <td>{{ $tour->guide ? $tour->guide->name : 'No'}}</td>
                                 <td class="">{{ $tour->category ? $tour->category->name : 'No'}}</td>
                                 <td class="td-actions text-right">
                                     <button type="button" rel="tooltip" title="Ver Tour"
-                                        class="btn btn-info btn-simple btn-xs">
-                                        <i class="fa fa-info"></i>
+                                    style="font-size: 0.7em" class="btn btn-info btn-simple btn-sm">
+                                        <i style="font-size: 1.5em" class="fa fa-info"></i>
                                     </button>
                                     <a href="{{ url('/admin/tours/'.$tour->id.'/edit') }}" rel="tooltip"
-                                        title="Editar Tour" class="btn btn-success btn-simple btn-xs">
-                                        <i class="fa fa-edit"></i>
+                                        title="Editar Tour" style="font-size: 0.7em"  class="btn btn-success btn-simple btn-sm">
+                                        <i style="font-size: 1.5em" class="fa fa-edit"></i>
+                                    </a>
+                                    <a href="{{ url('/admin/tours/'.$tour->id.'/images') }}" rel="tooltip"
+                                        title="Subir Imagen" style="font-size: 0.7em"  class="btn btn-warning btn-simple btn-sm">
+                                        <i  style="font-size: 1.5em" class="fa fa-image"></i>
                                     </a>
                                     <a href="{{'/admin/tours/'.$tour->id.'/delete'}}" rel="tooltip" title="Elimiar Tour"
-                                        class="btn btn-danger btn-simple btn-xs">
-                                        <i class="fa fa-times"></i>
+                                    style="font-size: 0.7em" class="btn btn-danger btn-simple btn-sm">
+                                        <i style="font-size: 1.5em" class="fa fa-trash"></i>
                                     </a>
                                 </td>
                             </tr>
@@ -63,39 +67,4 @@
         </div>
     </div>
 </div>
-<footer class="footer footer-default">
-    <div class="container">
-        <nav class="float-left">
-            <ul>
-                <li>
-                    <a href="https://www.creative-tim.com">
-                        Creative Tim
-                    </a>
-                </li>
-                <li>
-                    <a href="https://creative-tim.com/presentation">
-                        About Us
-                    </a>
-                </li>
-                <li>
-                    <a href="http://blog.creative-tim.com">
-                        Blog
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.creative-tim.com/license">
-                        Licenses
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <div class="copyright float-right">
-            &copy;
-            <script>
-            document.write(new Date().getFullYear())
-            </script>, made with <i class="material-icons">favorite</i> by
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
-        </div>
-    </div>
-</footer>
 @endsection

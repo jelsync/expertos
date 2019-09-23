@@ -3,7 +3,7 @@
 <!-- secction, parte de codigo que quiero "encapsular" y mandarlo a imprimir a otro lado-->
 @section('content')
 
-<nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100"
+<nav class="navbar navbar-dark navbar-color-on-scroll navbar-expand-lg" color-on-scroll="100"
     id="sectionsNav">
 </nav>
 <div class="index" data-parallax="true" style="background-image: url('img/profile_city.jpg')">
@@ -13,14 +13,14 @@
     <div class="container">
         <div class="section text-center">
             <h2 class="title">Registrar Tours</h2>
-            <form method="POST"action="{{ url('/admin/tours') }}" >
+            <form method="POST" action="{{ url('/admin/tours') }}" >
                 {{ csrf_field() }}
                 <div class="form-row">
                     <div class="col-md-4 mb-3">
-                        <input type="text" name="name" placeholder="Nombre del Tour..." class="form-control" />
+                        <input type="text" name="name" placeholder="Nombre del Tour..." class="form-control" require>
                     </div>
                     <div class="col-md-8 mb-3">
-                        <input type="text" name="description" placeholder="Descripción..." class="form-control" />
+                        <input type="text" name="description" placeholder="Descripción..." class="form-control" require>
                     </div>
                 </div>
                 <div class="form-row">
@@ -28,7 +28,7 @@
                         <input type="text" name="price" placeholder="Precio..." class="form-control" />
                     </div>
                     <div class="col-md-4 mb-3">
-                        <input type="text" name="reservations" placeholder="Numero de reservaciones.." class="form-control" />
+                        <input type="text" name="reservations" placeholder="Numero de reservaciones.." class="form-control" require>
                     </div>
                 </div>
                <div class="form-row">
@@ -60,7 +60,7 @@
         </div>
     </div>
 </div>
-<footer class="footer footer-default">
+<!-- <footer class="footer footer-default">
     <div class="container">
         <nav class="float-left">
             <ul>
@@ -94,5 +94,5 @@
             <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
         </div>
     </div>
-</footer>
+</footer> -->
 @endsection

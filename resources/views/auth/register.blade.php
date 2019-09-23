@@ -100,7 +100,7 @@
             </div>
         </div>
     </div>
-    <footer class="footer">
+    <!-- <footer class="footer">
         <div class="container">
             <nav class="float-left">
                 <ul>
@@ -135,6 +135,8 @@
                 es un placer.
             </div>
         </div>
-    </footer>
+    </footer> -->
+@include('incluir.footer')
+
 </div>
 @endsection

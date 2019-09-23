@@ -127,7 +127,7 @@
       </div>
     </div>
   </div>
-  <footer class="footer footer-default">
+  <!-- <footer class="footer footer-default">
     <div class="container">
       <nav class="float-left">
         <ul>
@@ -161,5 +161,7 @@
         <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
       </div>
     </div>
-  </footer>
+  </footer> -->
+@include('incluir.footer')
+
 @endsection
