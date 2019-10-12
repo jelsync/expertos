@@ -14,9 +14,9 @@ class TourTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Category::class, 3)->create();
-        factory(Tour::class, 10)->create();
-        factory(TourImage::class, 10)->create();
+        // factory(Category::class, 3)->create();
+        factory(Tour::class, 3)->create();
+        // factory(TourImage::class, 10)->create();
 
     }
 }

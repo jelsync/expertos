@@ -63,20 +63,22 @@
         <h2 class="title">Tours disponibles</h2>
         <div class="team">
           <div class="row">
-            @foreach($tours as $tour) <!-- RECORRER EL ARREGLO  -->
+            @foreach($categories as $category) <!-- RECORRER EL ARREGLO  -->
             <div class="col-md-4">
               <div class="team-player">
                 <div class="card card-plain">
                   <div class="col-md-6 ml-auto mr-auto" style="max-width:78%">
-                    <img src='{{$tour->category->image}}' alt="Thumbnail Image" class="img-raised rounded-circle" style='height:250px; width:250px;'>
+                    <!-- <img src='{{$category->image}}' alt="Thumbnail Image" class="img-raised rounded-circle" style='height:250px; width:250px;'> -->
                     <!-- style='height:150px; width:250px' -->
+                    <img src='{{$category->image}}' alt="Thumbnail Image" class="img-raised rounded-circle" style='height:250px; width:250px;'>
+
                   </div>
-                  <h4 class="card-title">{{$tour->name}}
+                  <h4 class="card-title">{{$category->name}}
                     <br>
-                    <small class="card-description text-muted">{{$tour->category->name}}</small>
+                    <!-- <small class="card-description text-muted">{{$category->name}}</small> -->
                   </h4>
                   <div class="card-body">
-                    <p class="card-description">{{$tour->description}}</p>
+                    <p class="card-description">{{$category->description}}</p>
                   </div>
                   <div class="card-footer justify-content-center">
                     <a href="#" class="btn btn-link btn-just-icon"><i class="fa fa-twitter"></i></a>

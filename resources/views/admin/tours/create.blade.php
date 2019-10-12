@@ -3,8 +3,7 @@
 <!-- secction, parte de codigo que quiero "encapsular" y mandarlo a imprimir a otro lado-->
 @section('content')
 
-<nav class="navbar navbar-dark navbar-color-on-scroll navbar-expand-lg" color-on-scroll="100"
-    id="sectionsNav">
+<nav class="navbar navbar-dark navbar-color-on-scroll navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
 </nav>
 <div class="index" data-parallax="true" style="background-image: url('img/profile_city.jpg')">
 
@@ -13,7 +12,7 @@
     <div class="container">
         <div class="section text-center">
             <h2 class="title">Registrar Tours</h2>
-            <form method="POST" action="{{ url('/admin/tours') }}" >
+            <form method="POST" action="{{ url('/admin/tours') }}" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-row">
                     <div class="col-md-4 mb-3">
@@ -28,10 +27,17 @@
                         <input type="text" name="price" placeholder="Precio..." class="form-control" />
                     </div>
                     <div class="col-md-4 mb-3">
-                        <input type="text" name="reservations" placeholder="Numero de reservaciones.." class="form-control" require>
+                        <input type="text" name="reservations" placeholder="Numero de reservaciones.."
+                            class="form-control" require>
+                    </div>
+                    <div class="col-md-4 mb-3">
+
+                        <input type="file" name="foto" id="" class="btn btn-primary" require>
+                        <!-- <button type="submit" class="btn btn-primary">Cargar imagen</button> -->
+
                     </div>
                 </div>
-               <div class="form-row">
+                <div class="form-row">
                     <div class="col-md-4 mb-3">
                         <label>Guias Disponibles</label>
                         <select class="form-control" name="nombreGuia">
@@ -47,10 +53,20 @@
                             <option value="{{$category->id}}">{{ $category->name }}</option>
                             @endforeach
                         </select>
-                        </div>
                     </div>
-                    
-                    <button type="submit" class="btn btn-primary">Registrar Tour</button>
+                    <!-- <div class="col-md-4 mb-3"> -->
+                        <!-- <button type="submit" class="btn btn-primary">Cargar imagen</button> -->
+
+                        <!-- <label>Tipo de categoria</label> -->
+                        <!-- <select class="form-control" name="nombreCategoria">
+                            @foreach($categories as $category)
+                            <option value="{{$category->id}}">{{ $category->name }}</option>
+                            @endforeach
+                        </select> -->
+                    <!-- </div> -->
+                </div>
+
+                <button type="submit" class="btn btn-primary">Registrar Tour</button>
             </form>
 
 

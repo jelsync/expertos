@@ -19,7 +19,7 @@
                         <a href="{{ url('/admin/tours/create') }}" class="btn btn-primary">Agregar Nuevo Tour</a>
                         <thead>
                             <tr>
-                                <th class="text-center">#</th>
+                                <!-- <th class="text-center">#</th> -->
                                 <th class= "col-md-1">Nombre</th>
                                 <th class= "col-md-3">Descripción</th>
                                 <th>Precio</th>
@@ -32,7 +32,7 @@
                         <tbody>
                             @foreach($tours as $tour)
                             <tr>
-                                <td class="text-center">{{ $tour->id }}</td>
+                                <!-- <td class="text-center">#</td> -->
                                 <td>{{ $tour->name }}</td>
                                 <td class="col-3">{{ $tour->description }}</td>
                                 <td>&#76;{{ $tour->price }}</td>
@@ -49,7 +49,7 @@
                                         <i style="font-size: 1.5em" class="fa fa-edit"></i>
                                     </a>
                                     <a href="{{ url('/admin/tours/'.$tour->id.'/images') }}" rel="tooltip"
-                                        title="Subir Imagen" style="font-size: 0.7em"  class="btn btn-warning btn-simple btn-sm">
+                                        title="Ver Imagen" style="font-size: 0.7em"  class="btn btn-warning btn-simple btn-sm">
                                         <i  style="font-size: 1.5em" class="fa fa-image"></i>
                                     </a>
                                     <a href="{{'/admin/tours/'.$tour->id.'/delete'}}" rel="tooltip" title="Elimiar Tour"

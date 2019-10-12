@@ -11,12 +11,12 @@
 <div class="main main-raised">
     <div class="container">
         <div class="section text-center">
-        <form action="post" method="" enctype="multipart/form-data">
-            {{ csrf_field() }}
-            <input type="file" name="foto" id="" class="btn btn-primary">
-            <button type="submit" rel="tooltip" class="btn btn-primary">Cargar imagen</button> <br>
+        <form action="" method="post" enctype="multipart/form-data">
+            <!-- {{ csrf_field() }}
+            <input type="file" name="foto" id="" class="btn btn-primary" require>
+            <button type="submit" class="btn btn-primary">Cargar imagen</button> <br> -->
         </form>
-            <h2 class="title text-center">Imagenes del Tour {{ $tours->name }}</h2>
+            <h2 class="title text-center">Imagene del Tour {{ $tours->name }}</h2>
             <img src='{{ asset($image) }}' class="img-raised rounded-circle" style='height:250px; width:250px;'>
         </div>
         <a href="{{ url('/admin/tours') }}" rel="tooltip" class="btn btn-primary">Volver atras</a> <br>

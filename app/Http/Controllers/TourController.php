@@ -35,6 +35,18 @@ class TourController extends Controller
         $tour -> reservations = $request->input('reservations'); 
         $tour -> guide_id = $request->input('nombreGuia');
         $tour -> category_id = $request->input('nombreCategoria');  
+        /* PRUEBA */
+        $archivo = $request->file('foto');
+        $guardar = public_path().'/img';
+        $nombreArchivo = $archivo->getClientOriginalName();
+        $archivo -> move($guardar, $nombreArchivo);
+        
+        $tour-> imagen = 'img/'.$nombreArchivo;
+
+        $tour ->save();
+        /* PRUEBA */
+
+
 
         $tour -> save();
         
@@ -58,6 +70,7 @@ class TourController extends Controller
         $tour -> price = $request->input('price');   
         $tour -> reservations = $request->input('reservations'); 
         $tour -> guide_id = $request->input('nombreGuia');  
+        $tour -> category_id = $request->input('nombreCategoria');  
         $tour -> save();
         
         return redirect('/admin/tours');

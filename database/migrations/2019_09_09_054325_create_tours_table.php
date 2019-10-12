@@ -15,10 +15,11 @@ class CreateToursTable extends Migration
     {
         Schema::create('tours', function (Blueprint $table) {
             $table->bigIncrements('id')->nullable();
-            $table->string('name');
-            $table->string('description',250);
-            $table->float('price');
-            $table->float('reservations');
+            $table->string('name')->nullable();
+            $table->string('description',250)->nullable();
+            $table->float('price')->nullable();
+            $table->float('reservations')->nullable();
+            $table->string('imagen')->nullable();
             $table->unsignedBigInteger('guide_id')->nullable();
             $table->foreign('guide_id')->references('id')->on('guides');
             $table->unsignedBigInteger('category_id')->nullable();

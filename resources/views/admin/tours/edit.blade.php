@@ -51,7 +51,7 @@
                         </div>
                     </div>
                     
-                    <button class="btn btn-primary">Registrar Tour</button>
+                    <button class="btn btn-primary">Actualizar Tour</button>
                     <a href="{{ url('/admin/tours') }}" class="btn btn-danger">Cancelar</a>
             </form>
 

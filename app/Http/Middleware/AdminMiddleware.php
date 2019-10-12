@@ -18,6 +18,8 @@ class AdminMiddleware
         if (!auth()->user()->admin) {
             return redirect('/home'); 
         }
+        // return redirect('/adminhome'); 
+
         return $next($request);
     }
 }

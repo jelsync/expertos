@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Tour;
 use App\Category;
+use App\TourImage;
 use DB;
 
 use Illuminate\Http\Request;
@@ -20,19 +21,25 @@ class ImageController extends Controller
         
 
         $tours = Tour::find($id);
-        $image = $tours->category->image;
+        $image = $tours->imagen;
         // return $image;
         return view('admin.tours.images.index')->with(compact( 'image', 'tours'));
     }
     public function store(Request $request, $id){
         $archivo = $request->file('foto');
         $guardar = public_path().'/img';
+        // $nombreArchivo = uniqid() . $archivo->getClientOriginalName();
         $nombreArchivo = $archivo->getClientOriginalName();
         $archivo -> move($guardar, $nombreArchivo);
         
-        $tourImage = new Category();
-        $tourImage-> image = $nombreArchivo;
-        $tourImage -> category_id = $id;
+        // $tourImage = new TourImage();
+        $tourImage = new Tour();
+
+        // $tourImage = new Tour();
+        $tourImage-> imagen = $nombreArchivo;
+        // $tourImage -> id = $id; 
+        // $tourImage -> tour_id = $id; 
+
         $tourImage ->save();
 
         return back(); 
